@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .heading{
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Summaries</title>
+</head>
+<body>
+    <h1 class="heading">Chapter Summaries</h1>
+    <h3>Rouge 1</h3>
+    <span><b>Recall: </b> {{ average_rouge_1_r }}</span>
+    <span><b>Precision: </b> {{ average_rouge_1_p }}</span>
+    <span><b>F1 Score: </b> {{ average_rouge_1_f }}</span>
+    <h3>Rouge 2</h3>
+    <span><b>Recall: </b> {{ average_rouge_2_r }}</span>
+    <span><b>Precision: </b> {{ average_rouge_2_p }}</span>
+    <span><b>F1 Score: </b> {{ average_rouge_2_f }}</span>
+    <h3>Rouge L</h3>
+    <span><b>Recall: </b> {{ average_rouge_l_r }}</span>
+    <span><b>Precision: </b> {{ average_rouge_l_p }}</span>
+    <span><b>F1 Score: </b> {{ average_rouge_l_f }}</span>
+    {% for summary in summaries %}
+        <div>
+            <h2 class="heading">Chapter {{ loop.index }}</h2>
+            <p>{{ summary }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
